@@ -1,6 +1,7 @@
 package exceptions;
 
 import java.sql.SQLOutput;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +13,19 @@ public class Main {
 //        System.out.println(divideEAFP(x, y));
 //        System.out.println(divide(x, y));
 //        getNumbers();
-        System.out.println("The result is " + getNumbersLBYL());
+//        System.out.println("The result is " + getNumbersLBYL());
+        System.out.println("The result is " + getNumbersEAFP());
+    }
+
+    private static Integer getNumbersEAFP(){
+        System.out.println("Please, enter a first number:");
+        try{
+            return scanner.nextInt();
+        }
+        catch(InputMismatchException e){
+            System.out.println("The input is not an Integer");
+            return 0;
+        }
     }
 
     private static Integer getNumbersLBYL(){
